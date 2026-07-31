@@ -48,85 +48,68 @@
     <!-- Canvas for floating gold dust particles -->
     <canvas id="gold-canvas"></canvas>
 
-    <!-- ==================== INTERACTIVE 3D ENVELOPE COVER ==================== -->
+    <!-- ==================== INTERACTIVE TRADITIONAL HINDU INVITATION COVER ==================== -->
     <div id="envelope-overlay" class="envelope-overlay">
 
-        <!-- Decorative corner border ornaments -->
-        <div class="env-corner-frame">
-            <svg class="env-corner env-corner--tl" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5,5 L5,45 Q5,5 45,5" fill="none" stroke="#C9A227" stroke-width="1.5"/>
-                <path d="M5,5 L5,35 Q5,15 25,5" fill="none" stroke="#D4AF37" stroke-width="0.7" opacity="0.6"/>
-                <circle cx="5" cy="5" r="3" fill="#D4AF37" opacity="0.8"/>
-                <path d="M5,25 Q15,15 25,5" fill="none" stroke="#C9A227" stroke-width="0.5" opacity="0.4"/>
-            </svg>
-            <svg class="env-corner env-corner--tr" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <path d="M95,5 L95,45 Q95,5 55,5" fill="none" stroke="#C9A227" stroke-width="1.5"/>
-                <path d="M95,5 L95,35 Q95,15 75,5" fill="none" stroke="#D4AF37" stroke-width="0.7" opacity="0.6"/>
-                <circle cx="95" cy="5" r="3" fill="#D4AF37" opacity="0.8"/>
-                <path d="M95,25 Q85,15 75,5" fill="none" stroke="#C9A227" stroke-width="0.5" opacity="0.4"/>
-            </svg>
-            <svg class="env-corner env-corner--bl" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5,95 L5,55 Q5,95 45,95" fill="none" stroke="#C9A227" stroke-width="1.5"/>
-                <path d="M5,95 L5,65 Q5,85 25,95" fill="none" stroke="#D4AF37" stroke-width="0.7" opacity="0.6"/>
-                <circle cx="5" cy="95" r="3" fill="#D4AF37" opacity="0.8"/>
-                <path d="M5,75 Q15,85 25,95" fill="none" stroke="#C9A227" stroke-width="0.5" opacity="0.4"/>
-            </svg>
-            <svg class="env-corner env-corner--br" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <path d="M95,95 L95,55 Q95,95 55,95" fill="none" stroke="#C9A227" stroke-width="1.5"/>
-                <path d="M95,95 L95,65 Q95,85 75,95" fill="none" stroke="#D4AF37" stroke-width="0.7" opacity="0.6"/>
-                <circle cx="95" cy="95" r="3" fill="#D4AF37" opacity="0.8"/>
-                <path d="M95,75 Q85,85 75,95" fill="none" stroke="#C9A227" stroke-width="0.5" opacity="0.4"/>
-            </svg>
-        </div>
+        <!-- Rich Red & Gold Silk Brocade Texture Backdrop -->
+        <div class="brocade-backdrop"></div>
+        <div class="vignette-overlay"></div>
 
-        <!-- Decorative top banner text -->
-        <div class="env-top-banner">
-            <span class="env-banner-ornament">✦</span>
-            <span class="env-banner-text">Wedding Invitation</span>
-            <span class="env-banner-ornament">✦</span>
-        </div>
+        <!-- Floating ambient gold particles & bokeh -->
+        <div class="env-orb" style="width:200px;height:200px;left:5%;top:10%;background:radial-gradient(circle,rgba(255,220,100,0.18),transparent 70%);animation-duration:12s;"></div>
+        <div class="env-orb" style="width:160px;height:160px;right:8%;top:20%;background:radial-gradient(circle,rgba(212,175,55,0.16),transparent 70%);animation-duration:15s;animation-delay:3s;"></div>
+        <div class="env-orb" style="width:220px;height:220px;left:15%;bottom:10%;background:radial-gradient(circle,rgba(240,190,80,0.14),transparent 70%);animation-duration:18s;animation-delay:6s;"></div>
+        <div class="env-orb" style="width:120px;height:120px;right:15%;bottom:20%;background:radial-gradient(circle,rgba(255,215,80,0.15),transparent 70%);animation-duration:10s;animation-delay:1.5s;"></div>
 
-        <!-- Bokeh floating orbs (injected by JS but also fallback static set) -->
-        <div class="env-orb" style="width:180px;height:180px;left:5%;top:10%;background:radial-gradient(circle,rgba(255,220,100,0.18),transparent 70%);animation-duration:12s;animation-delay:0s;"></div>
-        <div class="env-orb" style="width:120px;height:120px;right:8%;top:20%;background:radial-gradient(circle,rgba(212,175,55,0.14),transparent 70%);animation-duration:15s;animation-delay:3s;"></div>
-        <div class="env-orb" style="width:200px;height:200px;left:15%;bottom:10%;background:radial-gradient(circle,rgba(240,190,80,0.12),transparent 70%);animation-duration:18s;animation-delay:6s;"></div>
-        <div class="env-orb" style="width:90px;height:90px;right:15%;bottom:20%;background:radial-gradient(circle,rgba(255,215,80,0.15),transparent 70%);animation-duration:10s;animation-delay:1.5s;"></div>
-        <div class="env-orb" style="width:140px;height:140px;left:40%;top:5%;background:radial-gradient(circle,rgba(212,175,55,0.10),transparent 70%);animation-duration:14s;animation-delay:4s;"></div>
-        <div class="env-orb" style="width:100px;height:100px;right:30%;bottom:5%;background:radial-gradient(circle,rgba(255,200,80,0.12),transparent 70%);animation-duration:16s;animation-delay:7s;"></div>
-
+        <!-- Card Stage Wrapper -->
         <div class="envelope-wrapper" id="envelope-wrapper">
-            <div class="envelope" id="envelope">
-                <div class="envelope-flap back-flap"></div>
-                <div class="envelope-card" id="envelope-card">
-                    <div class="card-inner">
-                        <div class="card-image-frame">
-                            <img src="ghibli_couple_temple.jpg" alt="Swapnitha & Ravinandan Temple Painting" class="card-canvas-img">
-                        </div>
-                        <div class="card-text-details">
-                            <p class="card-pre-title">You are cordially invited to the wedding of</p>
-                            <h1 class="card-couple-names">Swapnitha & Ravinandan</h1>
-                            <p class="card-date-venue">August 27, 2026 • Sullia</p>
+            
+            <!-- Central Royal Maroon Cover Card -->
+            <div class="invitation-cover-card" id="envelope-card">
+                
+                <!-- Inner Gold Border Accent -->
+                <div class="card-gold-border"></div>
+
+                <!-- 1. Top Monogram Emblem -->
+                <div class="card-monogram">
+                    <div class="monogram-outer-ring">
+                        <div class="monogram-inner-ring">
+                            <span class="monogram-sparkle-left">✦</span>
+                            <span class="monogram-initials">S R</span>
+                            <span class="monogram-sparkle-right">✦</span>
                         </div>
                     </div>
                 </div>
-                <div class="envelope-flap left-flap"></div>
-                <div class="envelope-flap right-flap"></div>
-                <div class="envelope-flap bottom-flap"></div>
-                <div class="envelope-flap top-flap" id="top-flap"></div>
-            </div>
-            
-            <!-- Wax Seal Button & Glow -->
-            <div class="wax-seal-btn" id="wax-seal">
-                <div class="wax-seal-circle">
-                    <span class="wax-seal-monogram">S&R</span>
+
+                <!-- 2. Central Lord Ganesha & Mandala Flourish Frame -->
+                <div class="ganesha-motif-container">
+                    <div class="ganesha-mandala-frame">
+                        <img src="gold_ganesha_motif.png" alt="Lord Ganesha Golden Motif" class="ganesha-img">
+                    </div>
                 </div>
-                <div class="wax-seal-glow"></div>
+
+                <!-- 3. Bottom Sacred Mantra -->
+                <div class="sacred-mantra-box">
+                    <h2 class="mantra-line-1">Om Shree</h2>
+                    <h1 class="mantra-line-2">Prajapataye Namah!</h1>
+                </div>
+
+                <!-- Interactive Tap Unseal Button -->
+                <div class="wax-seal-btn" id="wax-seal" title="Tap to Open Invitation">
+                    <div class="wax-seal-circle">
+                        <span class="wax-seal-monogram">OPEN</span>
+                    </div>
+                    <div class="wax-seal-glow"></div>
+                </div>
+
             </div>
             
+            <!-- Animated Open Instruction Prompt -->
             <div class="open-prompt-indicator" id="open-indicator">
-                <span class="prompt-text">Tap Wax Seal to Open</span>
+                <span class="prompt-text">Tap Card or Seal to Open Invitation</span>
                 <span class="prompt-arrow-bounce">↓</span>
             </div>
+
         </div>
     </div>
 
@@ -142,6 +125,7 @@
                     <a href="#couple" class="nav-link">Couple</a>
                     <a href="#story" class="nav-link">Our Story</a>
                     <a href="#events" class="nav-link">Events</a>
+                    <button id="reopen-cover-btn" class="nav-cover-btn" title="View Invitation Cover">📜 Invitation Cover</button>
                 </nav>
                 <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation Menu">
                     <span class="bar"></span>

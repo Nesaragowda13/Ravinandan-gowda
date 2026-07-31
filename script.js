@@ -73,61 +73,73 @@ document.addEventListener('DOMContentLoaded', () => {
         audioToggle.addEventListener('click', toggleMusic);
     }
 
-    // === LUXURY 3D ENVELOPE COVER UNLOCK ===
+    // === TRADITIONAL HINDU INVITATION COVER UNLOCK & REOPEN ===
     const waxSeal = document.getElementById('wax-seal');
     const envelopeOverlay = document.getElementById('envelope-overlay');
     const envelopeWrapper = document.getElementById('envelope-wrapper');
-    const envelope = document.getElementById('envelope');
     const envelopeCard = document.getElementById('envelope-card');
     const openIndicator = document.getElementById('open-indicator');
     const mainContent = document.getElementById('main-content');
+    const reopenCoverBtn = document.getElementById('reopen-cover-btn');
 
-    if (waxSeal && envelopeOverlay && mainContent) {
-        waxSeal.addEventListener('click', () => {
-            // Play background music
-            playMusic();
-            
-            // Phase 1: Fade/shrink the wax seal & hide click prompt
-            waxSeal.classList.add('open-seal');
-            if (openIndicator) {
-                openIndicator.style.opacity = '0';
-            }
+    let isOpening = false;
 
-            // Phase 2: Flip the top flap open (after seal is gone)
+    function openInvitation() {
+        if (isOpening) return;
+        isOpening = true;
+
+        // Play background music
+        playMusic();
+        
+        // Phase 1: Hide prompt indicator & scale card
+        if (openIndicator) {
+            openIndicator.style.opacity = '0';
+        }
+
+        // Phase 2: Fade envelope wrapper & overlay
+        if (envelopeWrapper) {
+            envelopeWrapper.classList.add('fade-envelope');
+        }
+        
+        if (envelopeOverlay) {
+            envelopeOverlay.style.opacity = '0';
+        }
+        
+        if (mainContent) {
+            mainContent.style.display = 'block';
             setTimeout(() => {
-                if (envelope) {
-                    envelope.classList.add('open-flap');
-                }
-            }, 600);
+                mainContent.style.opacity = '1';
+                handleScrollReveal();
+            }, 150);
+        }
 
-            // Phase 3: Slide the card up out of the envelope
-            setTimeout(() => {
-                if (envelopeCard) {
-                    envelopeCard.classList.add('slide-card');
-                }
-            }, 1400);
-
-            // Phase 4: Zoom out the envelope, fade in the main content page
-            setTimeout(() => {
-                if (envelopeWrapper) {
-                    envelopeWrapper.classList.add('fade-envelope');
-                }
-                
-                envelopeOverlay.style.opacity = '0';
-                
-                mainContent.style.display = 'block';
-                setTimeout(() => {
-                    mainContent.style.opacity = '1';
-                    handleScrollReveal();
-                }, 50);
-            }, 2400);
-
-            // Phase 5: Completely remove envelope overlay from DOM flow
-            setTimeout(() => {
+        // Phase 3: Completely hide cover overlay after transition
+        setTimeout(() => {
+            if (envelopeOverlay) {
                 envelopeOverlay.style.display = 'none';
-            }, 3600);
-        });
+            }
+            isOpening = false;
+        }, 1200);
     }
+
+    function reopenCover() {
+        if (!envelopeOverlay) return;
+        envelopeOverlay.style.display = 'flex';
+        setTimeout(() => {
+            envelopeOverlay.style.opacity = '1';
+            if (envelopeWrapper) {
+                envelopeWrapper.classList.remove('fade-envelope');
+            }
+            if (openIndicator) {
+                openIndicator.style.opacity = '1';
+            }
+        }, 50);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    if (waxSeal) waxSeal.addEventListener('click', (e) => { e.stopPropagation(); openInvitation(); });
+    if (envelopeCard) envelopeCard.addEventListener('click', openInvitation);
+    if (reopenCoverBtn) reopenCoverBtn.addEventListener('click', reopenCover);
 
     // === FLOATING GHIBLI LEAVES & PETALS (CANVAS) ===
     const canvas = document.getElementById('gold-canvas');
