@@ -301,36 +301,36 @@ img {
     z-index: 2;
 }
 
-/* 1. Official 3D Gold Embossed S&R Monogram Emblem */
+/* 1. Official Unclipped 3D Gold Embossed S&R Monogram Emblem */
 .card-monogram {
     z-index: 5;
-    margin-top: 2px;
+    margin-top: 6px;
+    margin-bottom: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .monogram-emblem-wrapper {
     position: relative;
-    width: 110px;
-    height: 110px;
+    width: 100%;
+    max-width: 220px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
 }
 
-.official-sr-monogram-img {
-    width: 110px;
-    height: 110px;
+.unclipped-sr-monogram-img {
+    width: 100%;
+    max-height: 135px;
     object-fit: contain;
-    border-radius: 50%;
-    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 14px rgba(212, 175, 55, 0.5));
+    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 14px rgba(212, 175, 55, 0.45));
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.invitation-cover-card:hover .official-sr-monogram-img {
-    transform: scale(1.08);
+.invitation-cover-card:hover .unclipped-sr-monogram-img {
+    transform: scale(1.06);
 }
 
 /* Journey Begins Subtitle Text */
