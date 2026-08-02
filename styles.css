@@ -1898,6 +1898,10 @@ img {
     font-weight: 500;
 }
 
+.single-line {
+    white-space: nowrap;
+}
+
 .host-divider {
     font-size: 1.8rem;
     color: var(--color-gold);
