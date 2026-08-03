@@ -1883,18 +1883,80 @@ img {
 .hosts-card-wrapper {
     max-width: 1060px;
     margin: 0 auto;
-    background-color: rgba(255, 253, 249, 0.97);
-    border: 1px solid var(--color-gold);
-    outline: 2px double rgba(197, 155, 39, 0.4);
+    background: radial-gradient(ellipse 95% 75% at 50% 50%, #FFFDF7 0%, #FAF3E5 60%, #F4E8D3 100%);
+    border: 2px solid var(--color-gold);
+    outline: 2px double rgba(197, 155, 39, 0.5);
     outline-offset: -14px;
-    padding: 65px 40px 55px;
-    border-radius: 10px;
+    padding: 75px 45px 60px;
+    border-radius: 12px;
     box-shadow: 
-        0 18px 50px rgba(0, 0, 0, 0.35),
-        0 0 40px rgba(212, 175, 55, 0.2);
+        0 25px 70px rgba(0, 0, 0, 0.45),
+        0 0 50px rgba(212, 175, 55, 0.25),
+        inset 0 0 25px rgba(212, 175, 55, 0.1);
     position: relative;
     text-align: center;
     overflow: hidden;
+}
+
+/* Inner Decorative Gold Filigree Frame Lines */
+.hosts-card-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.6);
+    border-radius: 8px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.hosts-card-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 22px;
+    border: 1px stroke rgba(197, 155, 39, 0.35);
+    outline: 1px dashed rgba(212, 175, 55, 0.25);
+    outline-offset: -4px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Grand Corner Filigree Positioning */
+.grand-corner-ornament {
+    position: absolute;
+    z-index: 5;
+    pointer-events: none;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+    transition: transform 0.4s ease;
+}
+
+.grand-corner-ornament.top-left {
+    top: 6px;
+    left: 6px;
+}
+
+.grand-corner-ornament.top-right {
+    top: 6px;
+    right: 6px;
+}
+
+.grand-corner-ornament.bottom-left {
+    bottom: 6px;
+    left: 6px;
+}
+
+.grand-corner-ornament.bottom-right {
+    bottom: 6px;
+    right: 6px;
+}
+
+/* Top Central Gold Crest Emblem */
+.card-crest-top {
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    pointer-events: none;
 }
 
 .hosts-intro {
