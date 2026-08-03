@@ -1880,13 +1880,13 @@ img {
 }
 
 .hosts-card-wrapper {
-    max-width: 900px;
+    max-width: 980px;
     margin: 0 auto;
     background-color: rgba(255, 253, 249, 0.97);
     border: 1px solid var(--color-gold);
     outline: 2px double rgba(197, 155, 39, 0.4);
     outline-offset: -12px;
-    padding: 60px 48px 50px;
+    padding: 60px 32px 50px;
     border-radius: 8px;
     box-shadow: 
         0 15px 45px rgba(0, 0, 0, 0.35),
@@ -1909,10 +1909,10 @@ img {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 40px;
-    max-width: 820px;
+    gap: 30px;
+    max-width: 910px;
     margin: 0 auto 35px;
-    padding: 0 10px;
+    padding: 0 5px;
 }
 
 .host-column {
@@ -1932,22 +1932,19 @@ img {
 
 .host-names {
     font-family: var(--font-heading);
-    font-size: 1.12rem;
+    font-size: 1.05rem;
     color: var(--color-charcoal);
-    line-height: 1.6;
+    line-height: 1.65;
     font-weight: 600;
 }
 
 .host-name-main {
     display: block;
-    font-size: 1.15rem;
+    font-size: 1.02rem;
     font-weight: 600;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.2px;
     color: var(--color-charcoal);
     margin-bottom: 4px;
-    white-space: normal;
-    word-break: normal;
-    overflow-wrap: break-word;
 }
 
 .host-subtext {
@@ -1962,7 +1959,9 @@ img {
 }
 
 .single-line {
-    white-space: normal;
+    white-space: nowrap;
+    font-size: clamp(0.82rem, 1.02vw, 1.02rem);
+    letter-spacing: 0.2px;
 }
 
 .host-divider {
@@ -2039,9 +2038,9 @@ img {
     color: var(--color-gold-dark);
 }
 
-@media (max-width: 820px) {
+@media (max-width: 860px) {
     .hosts-card-wrapper {
-        padding: 45px 25px 35px;
+        padding: 45px 20px 35px;
         outline-offset: -8px;
     }
     .hosts-grid {
@@ -2054,7 +2053,8 @@ img {
         transform: rotate(90deg);
         margin: 5px 0;
     }
-    .host-name-main {
+    .single-line {
+        white-space: normal;
         font-size: 1.05rem;
     }
 }
