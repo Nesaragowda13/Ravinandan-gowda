@@ -1872,30 +1872,44 @@ img {
     background-color: var(--color-gold);
 }
 
-/* ==================== HOSTS SECTION ==================== */
+/* ==================== HOSTS & BLESSINGS SECTION ==================== */
 .hosts-section {
-    padding: 100px 0;
+    padding: 100px 0 120px;
     background-color: transparent;
     text-align: center;
-    border-top: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.hosts-card-wrapper {
+    max-width: 880px;
+    margin: 0 auto;
+    background-color: rgba(255, 253, 249, 0.96);
+    border: 1px solid var(--color-gold);
+    outline: 2px double rgba(197, 155, 39, 0.35);
+    outline-offset: -8px;
+    padding: 60px 45px 50px;
+    border-radius: 6px;
+    box-shadow: 
+        0 15px 45px rgba(0, 0, 0, 0.35),
+        0 0 30px rgba(212, 175, 55, 0.15);
+    position: relative;
+    text-align: center;
 }
 
 .hosts-intro {
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-style: italic;
-    color: #F7E8C4;
+    color: var(--color-gold-dark);
     margin-bottom: 35px;
     letter-spacing: 1.5px;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
 }
 
 .hosts-grid {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 60px;
+    gap: 50px;
     max-width: 800px;
-    margin: 0 auto 50px;
+    margin: 0 auto 40px;
 }
 
 .host-column {
@@ -1904,25 +1918,20 @@ img {
 
 .host-family-title {
     font-family: var(--font-body);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    color: #E6C875;
+    color: var(--color-gray-dark);
     margin-bottom: 12px;
     font-weight: 600;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
 }
 
 .host-names {
     font-family: var(--font-heading);
-    font-size: 1.4rem;
-    background: linear-gradient(135deg, #FFFFFF 0%, #FFF0C2 50%, #F5D06B 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    line-height: 1.6;
+    font-size: 1.35rem;
+    color: var(--color-charcoal);
+    line-height: 1.65;
     font-weight: 500;
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.95));
 }
 
 .single-line {
@@ -1931,90 +1940,86 @@ img {
 
 .host-divider {
     font-size: 1.8rem;
-    color: #FFDF73;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    color: var(--color-gold);
 }
 
 .hosts-outro {
-    font-size: 0.95rem;
-    color: #F7E8C4;
-    max-width: 600px;
-    margin: 0 auto;
+    font-size: 0.92rem;
+    color: var(--color-gray-dark);
+    max-width: 640px;
+    margin: 0 auto 35px;
     line-height: 1.7;
     font-weight: 400;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
 }
 
-@media (max-width: 768px) {
-    .hosts-grid {
-        flex-direction: column;
-        gap: 30px;
-    }
-    .host-divider {
-        transform: rotate(90deg);
-        margin: 10px 0;
-    }
+.hosts-footer-divider {
+    font-size: 1.4rem;
+    color: var(--color-gold);
+    margin: 35px 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
-/* ==================== FOOTER SECTION ==================== */
-.footer {
-    background-color: transparent;
-    padding: 80px 0;
-    text-align: center;
-    border-top: 1px solid rgba(212, 175, 55, 0.35);
-    position: relative;
+.hosts-footer-divider::before,
+.hosts-footer-divider::after {
+    content: '';
+    height: 1px;
+    width: 90px;
+    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
 }
 
-.footer-gold-divider {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 1.5px;
-    background-color: var(--color-gold);
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+.footer-content {
+    padding-top: 10px;
 }
 
 .footer-title {
     font-family: var(--font-heading);
-    font-size: 2.2rem;
-    font-weight: 600;
-    margin-bottom: 10px;
+    font-size: 2.3rem;
+    font-weight: 500;
+    color: var(--color-charcoal);
+    margin-bottom: 8px;
     letter-spacing: 2.5px;
-    background: linear-gradient(135deg, #FFFFFF 0%, #FFF2CC 40%, #F3CA64 80%, #D4AF37 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.95));
 }
 
 .footer-date {
     font-size: 0.85rem;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: #F7E8C4;
-    margin-bottom: 25px;
-    font-weight: 500;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+    color: var(--color-gold-dark);
+    margin-bottom: 18px;
+    font-weight: 600;
 }
 
 .footer-quote {
     font-family: var(--font-heading);
-    font-size: 1rem;
+    font-size: 0.98rem;
     font-style: italic;
     max-width: 520px;
-    margin: 0 auto 25px;
-    color: #FFFDF9;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+    margin: 0 auto 18px;
+    color: var(--color-gray-dark);
 }
 
 .footer-hashtag {
     font-size: 0.9rem;
     letter-spacing: 2.5px;
     font-weight: 600;
-    color: #FFDF73;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+    color: var(--color-gold-dark);
+}
+
+@media (max-width: 768px) {
+    .hosts-card-wrapper {
+        padding: 40px 20px 35px;
+    }
+    .hosts-grid {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .host-divider {
+        transform: rotate(90deg);
+        margin: 5px 0;
+    }
 }
 
 /* ==================== SCROLL ANIMATIONS (REVEAL) ==================== */
