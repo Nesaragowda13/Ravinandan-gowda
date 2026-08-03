@@ -460,7 +460,8 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 4px;
+    margin-top: -6px;
+    margin-bottom: 16px;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -1960,8 +1961,8 @@ img {
 
 .single-line {
     white-space: nowrap;
-    font-size: clamp(0.82rem, 1.02vw, 1.02rem);
-    letter-spacing: 0.2px;
+    font-size: clamp(0.88rem, 1.08vw, 1.08rem);
+    letter-spacing: 0.3px;
 }
 
 .host-divider {
