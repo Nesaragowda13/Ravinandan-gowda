@@ -254,7 +254,7 @@ img {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 24px 18px 20px 18px;
+    padding: 22px 16px 18px 16px;
     box-sizing: border-box;
     cursor: pointer;
     overflow: hidden;
@@ -278,19 +278,28 @@ img {
 /* Inner Double Gold Border Frame */
 .card-gold-border {
     position: absolute;
-    inset: 12px;
+    inset: 10px;
     border: 1px solid rgba(212, 175, 55, 0.5);
     outline: 1px stroke rgba(212, 175, 55, 0.25);
-    outline-offset: -5px;
+    outline-offset: -4px;
     border-radius: 8px;
     pointer-events: none;
     z-index: 2;
 }
 
-/* 1. Official Unclipped 3D Gold Embossed S&R Monogram Emblem */
+/* Header Block: Monogram + Subtitle */
+.card-header-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+    width: 100%;
+    flex-shrink: 0;
+}
+
 .card-monogram {
     z-index: 5;
-    margin-top: 6px;
+    margin-top: 4px;
     margin-bottom: 2px;
     display: flex;
     justify-content: center;
@@ -301,27 +310,22 @@ img {
 .monogram-emblem-wrapper {
     position: relative;
     width: 100%;
-    max-width: 220px;
+    max-width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .unclipped-sr-monogram-img {
-    width: 100%;
-    max-height: 135px;
+    width: auto;
+    max-width: 180px;
+    max-height: 95px;
     object-fit: contain;
-    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 14px rgba(212, 175, 55, 0.45));
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
 }
 
-.invitation-cover-card:hover .unclipped-sr-monogram-img {
-    transform: scale(1.06);
-}
-
-/* Journey Begins Subtitle Text */
 .journey-begins-box {
-    margin-top: -2px;
+    margin-top: 2px;
     margin-bottom: 4px;
     text-align: center;
     z-index: 5;
@@ -329,10 +333,10 @@ img {
 
 .journey-text {
     font-family: 'Cormorant Garamond', 'Cinzel', serif;
-    font-size: 0.92rem;
+    font-size: 0.85rem;
     font-weight: 500;
     font-style: italic;
-    letter-spacing: 1.8px;
+    letter-spacing: 1.5px;
     background: linear-gradient(135deg, #FFF8DC 0%, #EBD07B 50%, #C9A227 100%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -340,110 +344,85 @@ img {
     text-shadow: 0 2px 6px rgba(0,0,0,0.8);
 }
 
-.monogram-sparkle-left,
-.monogram-sparkle-right {
-    color: #F7E8C4;
-    font-size: 0.65rem;
-    opacity: 0.9;
-}
-
-.monogram-initials {
-    font-family: 'Cinzel', serif;
-    font-size: 1.15rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    background: linear-gradient(135deg, #FFF5D0 0%, #E5C158 50%, #B88E1C 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
-}
-
-/* 2. Central Lord Ganesha & Mandala Flourish Frame */
+/* Center Block: Central Lord Ganesha Motif (Seamless Transparent PNG) */
 .ganesha-motif-container {
-    flex: 1;
+    flex: 1 1 auto;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 10px 0;
+    margin: 4px 0;
     z-index: 5;
     position: relative;
 }
 
 .ganesha-mandala-frame {
     width: 100%;
-    max-width: 280px;
+    max-width: 260px;
     height: 100%;
-    max-height: 320px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .ganesha-img {
-    max-width: 100%;
-    max-height: 300px;
+    max-width: 92%;
+    max-height: clamp(140px, 26vh, 230px);
     object-fit: contain;
-    filter: 
-        drop-shadow(0 8px 20px rgba(0, 0, 0, 0.7))
-        drop-shadow(0 0 10px rgba(212, 175, 55, 0.35));
-    transition: transform 0.5s ease;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 12px rgba(212, 175, 55, 0.35));
 }
 
-.invitation-cover-card:hover .ganesha-img {
-    transform: scale(1.03);
-    filter: 
-        drop-shadow(0 12px 25px rgba(0, 0, 0, 0.8))
-        drop-shadow(0 0 18px rgba(212, 175, 55, 0.5));
-}
-
-/* 3. Bottom Sacred Mantra Text */
-.sacred-mantra-box {
-    text-align: center;
-    margin-top: 4px;
-    margin-bottom: 8px;
+/* Footer Block: Sacred Mantra + OPEN Button */
+.card-footer-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     z-index: 5;
     width: 100%;
     flex-shrink: 0;
-    padding: 0 10px;
+    margin-bottom: 2px;
+}
+
+.sacred-mantra-box {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 6px;
+    padding: 0 6px;
     box-sizing: border-box;
 }
 
 .mantra-line-1 {
     font-family: 'Cinzel Decorative', 'Cinzel', serif;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     font-weight: 600;
     letter-spacing: 2px;
     background: linear-gradient(135deg, #FFF8DC 0%, #EBD07B 50%, #C9A227 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
     margin-bottom: 2px;
 }
 
 .mantra-line-2 {
     font-family: 'Cinzel Decorative', 'Cinzel', serif;
-    font-size: clamp(0.8rem, 3.2vw, 1.05rem);
+    font-size: clamp(0.78rem, 3.2vw, 1.05rem);
     font-weight: 700;
     letter-spacing: 0.8px;
     background: linear-gradient(135deg, #FFFFFF 0%, #F5E6C8 40%, #D4AF37 80%, #9E7D1C 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.9), 0 0 12px rgba(212, 175, 55, 0.4);
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.9), 0 0 10px rgba(212, 175, 55, 0.4);
     line-height: 1.25;
     white-space: normal;
     word-break: normal;
     text-align: center;
     width: 100%;
-    margin-bottom: 4px;
-}
-
-@media (max-width: 480px) {
-    .mantra-line-1 { font-size: 0.85rem; }
-    .mantra-line-2 { font-size: 0.92rem; }
 }
 
 /* Wax Seal / Tap to Open Badge Button (Clean Position Below Mantra) */
@@ -452,16 +431,15 @@ img {
     top: auto !important;
     left: auto !important;
     transform: none !important;
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
     z-index: 10;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 6px auto 4px auto !important;
+    margin: 4px auto 0 auto !important;
     flex-shrink: 0;
-    transition: transform 0.3s ease;
 }
 
 .wax-seal-circle {
@@ -2803,80 +2781,72 @@ html, body {
     }
 }
 
-/* 3D Envelope Cover Overlay Mobile Fit (For small phones & landscape/portrait mode) */
-@media (max-width: 576px), (max-height: 720px) {
+/* Cover Overlay Mobile Fit (For all smartphones) */
+@media (max-width: 576px), (max-height: 740px) {
     .envelope-wrapper {
         width: 94vw !important;
-        max-width: 370px !important;
-        height: min(92vh, 670px) !important;
-        max-height: 670px !important;
-        padding: 6px !important;
+        max-width: 360px !important;
+        height: min(90vh, 620px) !important;
+        max-height: 620px !important;
+        padding: 4px !important;
     }
 
     .invitation-cover-card {
-        padding: clamp(16px, 3.5vh, 24px) clamp(12px, 3.5vw, 18px) !important;
+        padding: 18px 12px 14px 12px !important;
         border-radius: 10px !important;
     }
 
     .card-gold-border {
-        inset: 8px !important;
+        inset: 6px !important;
     }
 
     .unclipped-sr-monogram-img {
-        max-height: clamp(75px, 13vh, 115px) !important;
+        max-height: clamp(65px, 12vh, 85px) !important;
     }
 
     .journey-text {
-        font-size: clamp(0.78rem, 2.8vw, 0.88rem) !important;
-        letter-spacing: 1.2px !important;
+        font-size: clamp(0.75rem, 2.6vw, 0.84rem) !important;
+        letter-spacing: 1px !important;
     }
 
     .ganesha-motif-container {
-        margin: 4px 0 !important;
+        margin: 2px 0 !important;
     }
 
     .ganesha-img {
-        max-height: clamp(130px, 24vh, 220px) !important;
+        max-height: clamp(120px, 23vh, 195px) !important;
+        max-width: 95% !important;
     }
 
     .mantra-line-1 {
-        font-size: clamp(0.8rem, 3vw, 0.95rem) !important;
-        letter-spacing: 1.5px !important;
-        margin-bottom: 2px !important;
+        font-size: clamp(0.78rem, 2.8vw, 0.88rem) !important;
+        letter-spacing: 1.2px !important;
+        margin-bottom: 1px !important;
     }
 
     .mantra-line-2 {
-        font-size: clamp(0.78rem, 3.2vw, 1.02rem) !important;
-        letter-spacing: 0.6px !important;
+        font-size: clamp(0.75rem, 3vw, 0.96rem) !important;
+        letter-spacing: 0.5px !important;
         white-space: normal !important;
         word-break: normal !important;
         text-align: center !important;
-        line-height: 1.25 !important;
+        line-height: 1.2 !important;
         width: 100% !important;
-        margin-bottom: 4px !important;
+        margin-bottom: 2px !important;
     }
 
     .wax-seal-btn {
-        width: 48px !important;
-        height: 48px !important;
-        margin-top: 6px !important;
-        margin-bottom: 4px !important;
+        width: 44px !important;
+        height: 44px !important;
+        margin-top: 4px !important;
+        margin-bottom: 2px !important;
         position: relative !important;
         transform: none !important;
     }
 
     .wax-seal-monogram {
-        font-size: 0.58rem !important;
-        letter-spacing: 1px !important;
-    }
-
-    .open-prompt-indicator {
-        bottom: -26px !important;
-    }
-
-    .prompt-text {
-        font-size: 0.62rem !important;
-        letter-spacing: 1.5px !important;
+        font-size: 0.54rem !important;
+        letter-spacing: 0.8px !important;
     }
 }
 
