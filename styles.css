@@ -1608,18 +1608,26 @@ img {
 }
 
 .event-map-link {
-    font-size: 0.75rem;
+    display: inline-block;
+    margin-top: 12px;
+    padding: 7px 16px;
+    font-size: 0.72rem;
     font-weight: 600;
-    color: var(--color-charcoal);
-    border-bottom: 1px solid var(--color-gold);
-    letter-spacing: 2px;
+    color: var(--color-gold-dark);
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid var(--color-gold);
+    border-radius: 20px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    align-self: flex-start;
     transition: var(--transition-fast);
+    text-decoration: none;
 }
 
 .event-map-link:hover {
-    color: var(--color-gold-dark);
+    background: var(--color-gold);
+    color: var(--color-charcoal);
+    box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35);
+    transform: translateY(-2px);
 }
 
 /* ==================== RSVP SECTION ==================== */
