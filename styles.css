@@ -2105,12 +2105,12 @@ img {
 .host-subtext {
     display: block;
     font-family: var(--font-body);
-    font-size: 1.02rem;
+    font-size: 1.05rem;
     font-style: italic;
-    color: var(--color-gold-dark);
+    color: #350106 !important;
     margin-top: 6px;
-    letter-spacing: 0.5px;
-    font-weight: 500;
+    letter-spacing: 0.6px;
+    font-weight: 700 !important;
 }
 
 .single-line {
@@ -2129,12 +2129,12 @@ img {
 }
 
 .hosts-outro {
-    font-size: 0.98rem;
-    color: var(--color-gray-dark);
+    font-size: 1.02rem;
+    color: #2C0307 !important;
     max-width: 720px;
     margin: 0 auto 38px;
     line-height: 1.75;
-    font-weight: 400;
+    font-weight: 600 !important;
     padding: 0 15px;
 }
 
