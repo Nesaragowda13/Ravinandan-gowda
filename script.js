@@ -346,29 +346,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     handleScrollReveal();
 
-    // === EVENTS INTERACTIVE TABS FILTER ===
-    const eventTabBtns = document.querySelectorAll('.event-tab-btn');
-    const eventCards = document.querySelectorAll('.unified-event-card');
-
-    if (eventTabBtns.length > 0 && eventCards.length > 0) {
-        eventTabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const targetTab = btn.getAttribute('data-tab');
-                
-                eventTabBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                eventCards.forEach(card => {
-                    if (targetTab === 'all' || card.getAttribute('data-event') === targetTab) {
-                        card.style.display = 'block';
-                        card.style.opacity = '1';
-                    } else {
-                        card.style.display = 'none';
-                        card.style.opacity = '0';
-                    }
-                });
-            });
-        });
-    }
-
 });
