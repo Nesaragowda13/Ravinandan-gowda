@@ -1571,6 +1571,21 @@ img {
     font-weight: 600;
 }
 
+.event-card-dresscode {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2E5A27;
+    background: rgba(46, 90, 39, 0.08);
+    border: 1px solid rgba(46, 90, 39, 0.3);
+    border-radius: 18px;
+    padding: 4px 14px;
+    margin: 4px auto 10px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
 .event-card-tagline {
     font-family: var(--font-body);
     font-size: 0.98rem;
