@@ -1608,62 +1608,51 @@ img {
     font-weight: 600;
 }
 
-/* Dedicated Separate Dress Code Tab Block */
+/* Dedicated Separate Dress Code Pill Block */
 .dresscode-tab-card {
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
     background: linear-gradient(135deg, #F0FAF0 0%, #E0F5DB 100%);
     border: 1.5px solid #2B5722;
-    border-radius: 14px;
-    padding: 12px 18px;
-    margin: 14px auto 18px;
+    border-radius: 30px;
+    padding: 8px 18px;
+    margin: 10px auto 16px;
     box-shadow: 
-        0 6px 18px rgba(43, 87, 34, 0.12),
+        0 4px 15px rgba(43, 87, 34, 0.12),
         inset 0 1px 0 rgba(255, 255, 255, 0.8);
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
     box-sizing: border-box;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .dresscode-tab-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(43, 87, 34, 0.18);
+    box-shadow: 0 6px 18px rgba(43, 87, 34, 0.18);
 }
 
-.dresscode-tab-header {
-    display: flex;
+.dresscode-tab-body {
+    display: inline-flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 6px;
-    margin-bottom: 8px;
+    justify-content: center;
+    gap: 8px 12px;
+    width: 100%;
 }
 
-.tab-icon {
-    font-size: 1rem;
-}
-
-.tab-title {
+.dresscode-label {
     font-family: var(--font-sans);
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 1.8px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 1px;
     text-transform: uppercase;
     color: #2B5722;
 }
 
-.dresscode-tab-body {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    width: 100%;
-}
-
 .dresscode-color-title {
     font-family: var(--font-heading), serif;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: #122C0D;
     letter-spacing: 0.5px;
