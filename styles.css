@@ -1564,6 +1564,48 @@ img {
         0 0 25px rgba(212, 175, 55, 0.25);
 }
 
+/* Interactive Event & Dress Code Tabs Bar */
+.events-tab-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto 32px;
+    max-width: 850px;
+}
+
+.event-tab-btn {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1.5px solid rgba(212, 175, 55, 0.4);
+    background: rgba(255, 253, 249, 0.9);
+    color: var(--color-charcoal);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.event-tab-btn:hover {
+    border-color: var(--color-gold);
+    background: rgba(212, 175, 55, 0.12);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.2);
+}
+
+.event-tab-btn.active {
+    background: linear-gradient(135deg, #2D5B24 0%, #1A3C14 100%);
+    border-color: #2D5B24;
+    color: #FFFFFF;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(45, 91, 36, 0.25);
+    transform: translateY(-1px);
+}
+
 .event-card-header-img {
     width: 100%;
     overflow: hidden;
