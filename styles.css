@@ -1581,65 +1581,74 @@ img {
 
 .event-card-dresscode {
     display: inline-flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    font-family: var(--font-body);
-    font-size: 0.86rem;
-    color: #1F3F19;
-    background: linear-gradient(135deg, rgba(147, 197, 114, 0.15) 0%, rgba(178, 216, 161, 0.25) 100%);
-    border: 1.5px solid rgba(147, 197, 114, 0.55);
-    border-radius: 20px;
-    padding: 5px 16px;
-    margin: 6px auto 12px;
-    box-shadow: 0 2px 8px rgba(45, 82, 37, 0.08);
+    gap: 8px 12px;
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+    color: #163610 !important;
+    background: linear-gradient(135deg, #E2F4DA 0%, #D0EFC3 100%) !important;
+    border: 2px solid #38692E !important;
+    border-radius: 25px;
+    padding: 8px 20px;
+    margin: 8px auto 14px;
+    box-shadow: 0 4px 14px rgba(34, 76, 26, 0.16);
 }
 
-.dresscode-label {
-    font-weight: 500;
-    color: #3B6632;
-    text-transform: uppercase;
-    font-size: 0.76rem;
-    letter-spacing: 1px;
-}
-
-.dresscode-value {
+.dresscode-title {
     font-weight: 700;
-    color: #1F3F19;
+    color: #264E1C !important;
+    letter-spacing: 1.2px;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+}
+
+.dresscode-name {
+    font-weight: 800;
+    color: #122C0D !important;
+    font-size: 0.98rem;
     letter-spacing: 0.5px;
 }
 
-.color-palette-wrap {
+.color-palette-box {
     display: inline-flex;
     align-items: center;
-    gap: 3px;
-    margin-left: 6px;
-    padding: 3px 6px;
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 12px;
-    border: 1px solid rgba(147, 197, 114, 0.45);
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+    gap: 5px;
+    background: #FFFFFF !important;
+    border: 1.5px solid #38692E !important;
+    border-radius: 16px;
+    padding: 3px 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-.color-dot {
-    width: 12px;
-    height: 12px;
+.swatch-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #264E1C !important;
+    text-transform: uppercase;
+    margin-right: 2px;
+}
+
+.color-chip {
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     display: inline-block;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.9);
+    border: 1.5px solid #FFFFFF;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.color-dot.swatch-1 {
-    background-color: #93C572; /* Classic Pistachio Green */
+.color-chip.swatch-1 {
+    background-color: #88C057 !important; /* Vibrant Pistachio */
 }
 
-.color-dot.swatch-2 {
-    background-color: #B2D8A1; /* Soft Light Pistachio */
+.color-chip.swatch-2 {
+    background-color: #93C572 !important; /* Classic Pistachio Green */
 }
 
-.color-dot.swatch-3 {
-    background-color: #7DA65D; /* Deep Sage Pistachio */
+.color-chip.swatch-3 {
+    background-color: #5E932B !important; /* Rich Leaf Pistachio */
 }
 
 .event-card-tagline {
