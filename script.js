@@ -30,14 +30,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let isMusicPlaying = false;
 
     function playMusic() {
-        if (bgMusic) {
+        if (bgMusic && !isMusicPlaying) {
             bgMusic.play()
                 .then(() => {
                     isMusicPlaying = true;
                     updateAudioButtonState();
                 })
                 .catch(err => {
-                    console.log("Autoplay blocked. Music will start on user interaction.");
+                    console.log("Autoplay blocked by browser policy. Will play on first touch/click.", err);
                 });
         }
     }
@@ -50,27 +50,44 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             bgMusic.play().then(() => {
                 isMusicPlaying = true;
+                updateAudioButtonState();
             });
         }
         updateAudioButtonState();
     }
 
     function updateAudioButtonState() {
+        if (!audioToggle) return;
         const onIcon = audioToggle.querySelector('.audio-icon.on');
         const offIcon = audioToggle.querySelector('.audio-icon.off');
         if (isMusicPlaying) {
-            onIcon.style.display = 'block';
-            offIcon.style.display = 'none';
+            if (onIcon) onIcon.style.display = 'block';
+            if (offIcon) offIcon.style.display = 'none';
             audioToggle.setAttribute('title', 'Mute Music');
         } else {
-            onIcon.style.display = 'none';
-            offIcon.style.display = 'block';
+            if (onIcon) onIcon.style.display = 'none';
+            if (offIcon) offIcon.style.display = 'block';
             audioToggle.setAttribute('title', 'Play Music');
         }
     }
 
+    // Try playing immediately on load
+    playMusic();
+
+    // Unlock audio playback automatically on first user touch or click anywhere on screen
+    const unlockAudioPlayback = () => {
+        playMusic();
+        document.removeEventListener('click', unlockAudioPlayback);
+        document.removeEventListener('touchstart', unlockAudioPlayback);
+    };
+    document.addEventListener('click', unlockAudioPlayback, { once: true });
+    document.addEventListener('touchstart', unlockAudioPlayback, { once: true });
+
     if (audioToggle) {
-        audioToggle.addEventListener('click', toggleMusic);
+        audioToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMusic();
+        });
     }
 
     // === TRADITIONAL HINDU INVITATION COVER UNLOCK & REOPEN ===
