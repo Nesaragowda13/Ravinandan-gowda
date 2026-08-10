@@ -1707,6 +1707,23 @@ img {
     background: radial-gradient(circle at 35% 35%, #7CA760 0%, #5E932B 60%, #46731B 100%) !important;
 }
 
+/* Yellow Dress Code Swatches for Haldi */
+.dresscode-swatch-group.yellow-group {
+    border: 1.5px solid #D4AF37;
+}
+
+.swatch-circle.yellow-main {
+    background: radial-gradient(circle at 35% 35%, #FFF000 0%, #FFD700 60%, #E6B800 100%) !important;
+}
+
+.swatch-circle.yellow-light {
+    background: radial-gradient(circle at 35% 35%, #FFF999 0%, #FFF176 60%, #FDD835 100%) !important;
+}
+
+.swatch-circle.yellow-dark {
+    background: radial-gradient(circle at 35% 35%, #FFC107 0%, #FFB300 60%, #E69500 100%) !important;
+}
+
 .event-card-tagline {
     font-family: var(--font-body);
     font-size: 0.98rem;
